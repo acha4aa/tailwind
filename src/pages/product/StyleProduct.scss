@@ -1,0 +1,114 @@
+// styles.scss
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$text-color: #333;
+$card-height: 400px; // Fixed card height
+$image-height: 200px; // Fixed image height
+
+.container {
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+.input {
+  &-bordered {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+
+    input {
+      flex-grow: 1;
+      padding: 10px;
+      border: 1px solid $primary-color;
+      border-radius: 4px;
+      font-size: 16px;
+      &:focus {
+        border-color: $secondary-color;
+        outline: none;
+      }
+    }
+
+    .search-icon {
+      width: 20px;
+      height: 20px;
+      opacity: 0.7;
+      cursor: pointer;
+    }
+  }
+}
+
+.results-info {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: $text-color;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 0 300px; // Minimum width of 300px
+    max-width: 300px; // Maximum width
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    height: $card-height; // Fixed height for uniformity
+
+    figure {
+      img {
+        width: 100%;
+        height: auto; // Fixed height for images
+        object-fit: cover; // Ensures images cover the area without distortion
+        display: block;
+      }
+    }
+
+    .card-body {
+      flex: 1; // Allows the body to grow
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+
+      .card-title {
+        font-size: 20px;
+        margin: 0;
+        color: $primary-color;
+        text-align: center;
+      }
+
+      p {
+        font-size: 14px;
+        color: $text-color;
+        overflow: hidden; // Prevents overflow
+        text-overflow: ellipsis; // Ellipsis for overflow text
+        display: -webkit-box;
+        line-clamp: 3; // Limit to 3 lines
+        box-orient: vertical;
+      }
+
+      .card-actions {
+        margin-top: auto; // Pushes actions to the bottom
+        display: flex;
+        justify-content: flex-end;
+
+        .btn {
+          background-color: $primary-color;
+          color: #fff;
+          padding: 10px 15px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          
+        }
+      }
+    }
+  }
+} 
